@@ -96,3 +96,7 @@ div.sidebar {
 .featured {
   height: 130px;
 }
+
+marquee {
+  width: 250px;
+}
