@@ -1,10 +1,10 @@
 * {
-  cursor: url(https://cdn.glitch.global/0bc37026-b9bf-4647-abaf-d27503919aae/cur.png?v=1698970118086),
+  cursor: url(https://cocosbeans.me/i/cur.png),
     auto !important;
 }
 
 body {
-  background-image: url(https://cdn.glitch.global/0bc37026-b9bf-4647-abaf-d27503919aae/color2.png?v=1698969891911);
+  background-image: url(https://cocosbeans.me/i/color2.png);
   padding-top: 5px;
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka,
     メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック",
@@ -63,7 +63,7 @@ button.sidebar:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   overflow: hidden;
-  background-image: url(https://cdn.glitch.global/0bc37026-b9bf-4647-abaf-d27503919aae/container-bg5.png?v=1698974160764);
+  background-image: url(https://cocosbeans.me/i/container-bg5.png);
 }
 
 .window-header {
