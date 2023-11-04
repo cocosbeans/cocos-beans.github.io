@@ -6,9 +6,9 @@ function github() {
     window.open("https://twitter.com/cocosbeans", '_blank')
   }
   
-  function steam() {
-    alert('Sorry, I\'ll have to fix this later but I realized I need to disconnect my Steam for personal reasons :(')
-  }
+ function history() {
+  window.open("https://cocosbeans.me/history")
+}
   
   function dev() {
     window.open("https://dev.cocosbeans.me")
