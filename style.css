@@ -94,6 +94,8 @@ button.sidebar:hover {
 .anything {
   height: 230px;
   overflow: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .window-header {
