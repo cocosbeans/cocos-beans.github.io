@@ -1,110 +1,126 @@
 * {
-    cursor: url(https://cocosbeans.me/i/cur.png), auto !important;
-  }
-  
-  body {
-    background-image: url(https://cocosbeans.me/i/rainbow4.png); 
-    padding-top: 5px;
-    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka,
-      メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック",
-      "MS Gothic", "Noto Sans CJK JP", TakaoPGothic, sans-serif;
-    text-align: center;
-  }
-  
-  .title {
-    font-size: 20px;
-  }
-  
-  button.sidebar {
-    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka,
-      メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック",
-      "MS Gothic", "Noto Sans CJK JP", TakaoPGothic, sans-serif;
-    font-size: 20px;
-    width: 140px;
-    height: 40px;
-    padding: 2px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    color: white;
-    border: 0px solid;
-    border-radius: 10px;
-  }
-  
-  img.sidebar {
-    width: 120px;
-    padding: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-  
-  button.sidebar:hover {
-    filter: drop-shadow(3px 2px 0px white);
-  }
-  
-  .button1 {
-    background-color: #d83838;
-  }
-  
-  .button2 {
-    background-color: #d8c738;
-  }
-  
-  .button3 {
-    background-color: #8bd838;
-  }
-  
-  .button4 {
-    background-color: #38d8bb;
-  }
-  
-  /* v v v Most of this fucking code was made by gpt LOL v v v */
-  .window-container {
-    width: 1100px;
-    height: 795px;
-    margin: 20px auto;
-    border: 2px solid #FFA2EC;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    overflow: hidden;
-    background-image: url(https://cocosbeans.me/i/rainbow2.png);
-  }
-  
-  .window-header {
-    background-color: #FFA2EC;
-    color: #ffffff;
-    padding: 8px;
-    text-align: center; 
-  }
-  
-  div.sidebar {
-    width: 150px;
-    height: 795px;
-    padding: 15px;
-    float: left;
-  }
-  
-  .content {
-    background-color: white;
-    height: auto;
-    border-radius: 10px;
-    border: 1px solid #F3B7E7;
-    flex: 1;
-    padding: 3px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 20px;
-    overflow: hidden;
-  }
-  
-  .anything {
-    height: 210px;
-    overflow: auto;
-  }
-  
-  marquee {
-    width: 250px;
-  }
-  
-  .randomshit {
-    height: 120px;
-  }
+  cursor: url(https://cocosbeans.me/i/cur.png), auto !important;
+}
+
+body {
+  background-image: url(https://cocosbeans.me/website-image-assets/background1.png);
+  padding-top: 5px;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka,
+    メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック",
+    "MS Gothic", "Noto Sans CJK JP", TakaoPGothic, sans-serif;
+  text-align: center;
+}
+
+.title {
+  font-size: 20px;
+}
+
+button.sidebar {
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka,
+    メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック",
+    "MS Gothic", "Noto Sans CJK JP", TakaoPGothic, sans-serif;
+  font-size: 20px;
+  width: 140px;
+  height: 40px;
+  padding: 2px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: white;
+  border: 0px solid;
+  border-radius: 10px;
+}
+
+img.sidebar {
+  width: 120px;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+button.sidebar:hover {
+  filter: drop-shadow(3px 2px 0px white);
+}
+
+.button1 {
+  background-color: #d83838;
+}
+
+.button2 {
+  background-color: #d8c738;
+}
+
+.button3 {
+  background-color: #8bd838;
+}
+
+.button4 {
+  background-color: #38d8bb;
+}
+
+/* v v v Most of this fucking code was made by gpt LOL v v v */
+.window-container {
+  width: 1100px;
+  height: 800px;
+  margin: 20px auto;
+  border: 2px solid #ffa2ec;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  overflow: hidden;
+  background-image: url(https://cocosbeans.me/i/rainbow2.png);
+}
+
+.content {
+  background-color: white;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #f3b7e7;
+  flex: 1;
+  padding: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.randomshit {
+  height: 120px;
+}
+
+.interestlabel {
+  margin: 3px;
+  margin-top: 6px;
+}
+
+.anything {
+  height: 230px;
+  overflow: auto;
+}
+
+.window-header {
+  background-image: url(https://cocosbeans.me/website-image-assets/bar7.png);
+  color: #1f61aa;
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ffa2ec;
+}
+
+div.sidebar {
+  width: 150px;
+  height: 795px;
+  padding: 15px;
+  float: left;
+  background-image: url(https://cocosbeans.me/website-image-assets/sidebar-color-2.png);
+  margin-right: 10px;
+  border-right: 1px solid #ffa2ec;
+}
+
+marquee {
+  width: 250px;
+}
+
+a,
+a:visited {
+  color: black;
+}
+
+/* Look i tried organizing this alphabetically but mozilla fuckin hates me or somethin idk. */
