@@ -1,9 +1,9 @@
 * {
-  cursor: url(https://cocosbeans.me/i/cur.png), auto !important;
+  cursor: url(https://cocosbeans.me/assets/misc/cur.png), auto !important;
 }
 
 body {
-  background-image: url(https://cocosbeans.me/website-image-assets/background1.png);
+  background-image: url(https://cocosbeans.me/asset/backgrounds/body.png);
   padding-top: 5px;
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka,
     メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック",
@@ -57,7 +57,6 @@ button.sidebar:hover {
   background-color: #38d8bb;
 }
 
-/* v v v Most of this fucking code was made by gpt LOL v v v */
 .window-container {
   width: 1100px;
   height: 800px;
@@ -66,7 +65,7 @@ button.sidebar:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   border-radius: 5px;
   overflow: hidden;
-  background-image: url(https://cocosbeans.me/i/rainbow2.png);
+  background-image: url(https://cocosbeans.me/assets/backgrounds/window.png);
 }
 
 .content {
@@ -99,7 +98,7 @@ button.sidebar:hover {
 }
 
 .window-header {
-  background-image: url(https://cocosbeans.me/website-image-assets/bar7.png);
+  background-image: url(https://cocosbeans.me/assets/misc/header-bar.png);
   color: #1f61aa;
   padding: 8px;
   text-align: center;
@@ -111,7 +110,7 @@ div.sidebar {
   height: 795px;
   padding: 15px;
   float: left;
-  background-image: url(https://cocosbeans.me/website-image-assets/sidebar-color-2.png);
+  background-image: url(https://cocosbeans.me/assets/backgrounds/sidebar.png);
   margin-right: 10px;
   border-right: 1px solid #ffa2ec;
 }
@@ -124,5 +123,3 @@ a,
 a:visited {
   color: black;
 }
-
-/* Look i tried organizing this alphabetically but mozilla fuckin hates me or somethin idk. */
