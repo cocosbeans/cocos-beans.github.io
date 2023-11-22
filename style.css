@@ -91,8 +91,7 @@ button.sidebar:hover {
 }
 
 .anything {
-  height: 230px;
-  overflow: auto;
+  height: 110px;
   padding-left: 20px;
   padding-right: 20px;
 }
