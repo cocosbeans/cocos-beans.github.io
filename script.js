@@ -2,16 +2,16 @@ function github() {
   window.open("https://github.com/cocos-beans", "_blank");
 }
 
-function twitter() {
-  window.open("https://twitter.com/cocosbeans", "_blank");
+function recursion() {
+  window.open("https://cocosbeans.me");
 }
 
-function preview() {
-  window.open("https://cbmpreview.glitch.me");
+function infinity() {
+  window.open("https://imt.cocosbeans.me", "_blank");
 }
 
-function dev() {
-  window.open("https://dev.cocosbeans.me");
+function troll() {
+  window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank")
 }
 
 function isMobile() {
