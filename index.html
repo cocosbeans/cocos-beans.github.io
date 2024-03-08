@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Blair Myhre</title>
+
+        <style>
+            *   {font-family:"Baskerville Old Face",sans-serif;text-align:center;}
+            h1, h2, h3 {margin:2px;padding:2px;} h1  {font-size:5rem;} span, p {font-size:20px;} a {font-family:sans-serif;color:black;}
+            hr  {border:2px solid black;border-radius:5px;width:30%;margin-bottom:20px;}
+            div.infobox {
+                border: 3px solid black;
+                border-radius: 3px;
+                width: 20%; margin: auto;
+                padding: 15px;
+                text-align: left;
+                font-family: Georgia, sans-serif;
+            }
+            div.links {
+                border: 3px solid black;
+                border-radius: 3px;
+                width: 20%; margin: auto;
+                padding: 15px;
+                text-align: center;
+            }
+            button {
+                border: 0;
+                border-radius: 2px;
+                background-color: white;
+                font-size: 20px;
+                padding: 0; margin: 0;
+                transition: 0.25s;
+            }
+            button:hover {
+                background-color: lightcoral;
+                cursor: pointer;
+            }
+        </style>
+
+        <script defer>
+            const src = '626C61697240636F636F736265616E732E6D65'
+            function reveal() {
+                let str = ''
+                for (n = 0; n < src.length; n += 2) str += String.fromCharCode(parseInt(src.substr(n, 2), 16))
+                document.getElementById('mail').outerHTML = `<span>${str}</span>`
+            }
+        </script>
+    </head>
+    <body>
+        <h1>
+            Blair Myhre
+        </h1>
+            <hr>
+        <div class="infobox">
+            &nbsp;
+            <img src="assets/location.png" alt="location icon" height="20">
+                &ensp;
+            <span>Richmond, TX</span>
+                <br>
+            &nbsp;
+            <img src="assets/braces.png" alt="brackets icon" height="20">
+                &ensp;
+            <span>JavaScript / C# / HTML</span>
+                <br>
+            &nbsp;
+            <img src="assets/at.png" alt="at symbol" height="20">
+                &ensp;
+            <button id="mail" onclick="reveal()"><em>Reveal Mail</em></button>
+                <br>
+            &nbsp;
+            <img src="assets/discord.png" alt="discord logo" height="20">
+                &ensp;
+            <span>@cocosbeans</span>
+                <br>
+            <!--
+            &nbsp;
+            <img src="assets/heart.png" alt="heart" height="20">
+                &ensp;
+            <span>Azzy R.</span> -->
+        </div>
+            <br>
+        <div class="links">
+            <a href="https://personal.cocosbeans.me/">personal.cocosbeans.me</a><br>
+            <a href="https://github.com/cocos-beans/">github.com/cocos-beans</a><br>
+            <a href="https://github.com/cocos-beans/xpel/">cocos-beans/xpel</a><br>
+        </div>
+    </body>
+</html>
