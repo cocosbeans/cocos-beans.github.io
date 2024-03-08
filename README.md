@@ -1,1 +1,1 @@
-# cocos-beans.github.io
+Website
