@@ -8,13 +8,14 @@
             * {font-family: "Cascadia Mono";text-align:center;text-shadow: 2px 2px 0px black;color: white;}
             body {background:lightcoral;padding:5px;}
             h1 {
-                font-family: "Lucida Calligraphy";
+                font-family: "unispace";
                 font-size: 50px;
                 margin: 0;}
             h2 {font-family:"vcr";font-size:30px;}
             p { font-size: 19px;padding:0; }
             hr { border:3px solid black;border-radius:10px;width:50%;box-shadow:white 2px 2px 0px;}
-            @font-face {font-family:"vcr";src:url("https://cocosbeans.me/assets/vcr_osd_mono.ttf");}
+            @font-face {font-family:"vcr";src:url("https://cocosbeans.me/brtracker/assets/vcr_osd_mono.ttf");}
+            @font-face {font-family:"unispace";src:url("https://cocosbeans.me/brtracker/assets/unispace_bd.otf");}
             .shell {border:0;background-color:transparent;cursor:pointer;}
         </style>
 
@@ -32,10 +33,10 @@
                     if (states[shell] > 2) states[shell] = 0
                     document.getElementById(shell).innerHTML =
                         states[shell] === 0 ?
-                            '<img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128">' :
+                            '<img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128" alt="Unknown Round">' :
                             states[shell] === 1 ?
-                                '<img src="https://cocosbeans.me/brtracker/assets/br_roundlive.png" width="128">' :
-                                '<img src="https://cocosbeans.me/brtracker/assets/br_roundblank.png" width="128">'
+                                '<img src="https://cocosbeans.me/brtracker/assets/br_roundlive.png" width="128" alt="Live Round">' :
+                                '<img src="https://cocosbeans.me/brtracker/assets/br_roundblank.png" width="128" alt="Blank Round">'
                 }
 
                 document.getElementById("shell0").addEventListener("click",()=>{changeImg("shell0")})
@@ -57,29 +58,13 @@
             Created by <a href="https://cocosbeans.me">cocosbeans</a> (2024) • v0.0a</p>
         <hr>
         <h2>Shells</h2>
-        <button class="shell" id="shell0">
-            <img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128">
-        </button>
-        <button class="shell" id="shell1">
-            <img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128">
-        </button>
-        <button class="shell" id="shell2">
-            <img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128">
-        </button>
-        <button class="shell" id="shell3">
-            <img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128">
-        </button>
-        <button class="shell" id="shell4">
-            <img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128">
-        </button>
-        <button class="shell" id="shell5">
-            <img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128">
-        </button>
-        <button class="shell" id="shell6">
-            <img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128">
-        </button>
-        <button class="shell" id="shell7">
-            <img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128">
-        </button>
+        <button class="shell" id="shell0"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
+        <button class="shell" id="shell1"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
+        <button class="shell" id="shell2"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
+        <button class="shell" id="shell3"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
+        <button class="shell" id="shell4"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
+        <button class="shell" id="shell5"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
+        <button class="shell" id="shell6"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
+        <button class="shell" id="shell7"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
     </body>
 </html>
