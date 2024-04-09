@@ -21,10 +21,14 @@
             .main {border:3px solid white;border-radius:7px;width:50%;margin:auto;background:rgb(196,136,136);
                 background:linear-gradient(27deg,rgba(196,136,136,1) 0%,rgba(255,199,199,1)62%,rgba(196,85,85,1)100%);
                 padding:15px;}
+            .fire { width: 200px;height:50px;border:3px solid white;border-radius:5px;cursor:pointer; }
+            .live { background-color:darkred; }
+            .blank { background-color:slategray; }
+            .reset { background-color:black; }
         </style>
 
         <script defer>
-            window.onload = () => {
+        window.onload = () => {
                 //if (Math.floor(Math.random() * 10000) > 2) document.body.style.backgroundImage = "url('https://cocosbeans.me/brtracker/assets/boykisser.png')"
 
                 //Sorry, doesn't look good on mobile yet, and is therefore excluded!
@@ -45,23 +49,33 @@
                     shell4: 0, shell5: 0,
                     shell6: 0, shell7: 0
                 }
-
-                function _simplify(num, dem) {
-                    var gcd = function gcd(a, b) { return b ? gcd(b, a%b) : a }
-                    gcd = gcd(num, dem)
-                    return [num/gcd, dem/gcd]
+                function fire(isLive) {
+                    for (k in states) {
+                        if (states[k] === 1 && isLive) {
+                            states[k] = 0
+                            updateImage(k)
+                            updateProbability()
+                            return
+                        }
+                        else if (states[k] === 2 && !isLive) {
+                            states[k] = 0
+                            updateImage(k)
+                            updateProbability()
+                            return
+                        }
+                    }
                 }
 
-                function updateShell(shell) {
-                    states[shell]++
-                    if (states[shell] > 2) states[shell] = 0
+                function updateImage(shell) {
                     document.getElementById(shell).innerHTML =
                         states[shell] === 0 ?
                             '<img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128" alt="Unknown Round">' :
                             states[shell] === 1 ?
                                 '<img src="https://cocosbeans.me/brtracker/assets/br_roundlive.png" width="128" alt="Live Round">' :
                                 '<img src="https://cocosbeans.me/brtracker/assets/br_roundblank.png" width="128" alt="Blank Round">'
+                }
 
+                function updateProbability() {
                     var bl = 0
                     var li = 0
 
@@ -70,10 +84,15 @@
                         else if (v === 2) bl++
                     }
 
-                    var prob = _simplify(li, bl)
-
                     document.getElementById('probability').innerHTML =
                         `Live/Blank Ratio: ${li}/${bl}<br>Odds of a Live Round: ${li === 0 ? 0 : Math.round((li / (li + bl)) * 100)}%<br>Odds of a Blank Round: ${bl === 0 ? 0 : Math.round((bl / (li + bl)) * 100)}%`
+                }
+
+                function updateShell(shell) {
+                    states[shell]++
+                    if (states[shell] > 2) states[shell] = 0
+                    updateImage(shell)
+                    updateProbability()
                 }
 
                 function clearAll() {
@@ -97,6 +116,28 @@
                     }
                 }
 
+                function credits() {
+                        document.getElementById('main').innerHTML =
+                            `<h2 style="margin-top:0;">Credits</h2>
+                         <p style="word-wrap:wrap;text-align:left;">
+                            This project was created by Blair Myhre (cocosbeans) on April 8, 2024.
+                            The Buckshot Roulette Tracker is an open-source, individual project created,
+                            maintained and owned by Blair Myhre. All website code is
+                                <a href="https://github.com/cocos-beans/cocos-beans.github.io/tree/main/brtracker">open source</a>
+                            and is protected under the Mozilla Public License 2.0.
+                         </p>
+                         <p style="text-align:left;">
+                            • <a href="https://mikeklubnika.itch.io/buckshot-roulette">Buckshot Roulette</a>: Mike Klubnika<br>
+                            • Website Background: Mike Klubnika<br>
+                            &nbsp;&nbsp;(thanks hsam for capturing it!)<br>
+                            • Web code: cocosbeans<br>
+                            • Assets: Shotgun Shells from HiClipart (edited by cocosbeans)<br>
+                            • Testrunning: hsam
+                         </p>
+                        `
+                        document.getElementById('credits').innerHTML = 'Refresh page for tracker'
+                }
+
                 document.getElementById("shell0").addEventListener("click",()=>{updateShell("shell0")})
                 document.getElementById("shell1").addEventListener("click",()=>{updateShell("shell1")})
                 document.getElementById("shell2").addEventListener("click",()=>{updateShell("shell2")})
@@ -106,7 +147,10 @@
                 document.getElementById("shell6").addEventListener("click",()=>{updateShell("shell6")})
                 document.getElementById("shell7").addEventListener("click",()=>{updateShell("shell7")})
 
+                document.getElementById("fire_live").addEventListener("click",()=>{fire(true)})
+                document.getElementById("fire_blank").addEventListener("click",()=>{fire(false)})
                 document.getElementById("resetshells").addEventListener("click",()=>{clearAll()})
+                document.getElementById("credits").addEventListener("click",()=>{credits()})
             }
         </script>
     </head>
@@ -115,11 +159,12 @@
             The Buckshot Roulette Tracker
         </h1>
         <p>Made for <a href="https://mikeklubnika.itch.io/buckshot-roulette">Buckshot Roulette</a> •
-            Created by <a href="https://cocosbeans.me">cocosbeans</a> (2024) • v0.2a</p>
+            Created by <a href="https://cocosbeans.me">cocosbeans</a> (2024) • v0.3a</p>
+        <button class="textbutton" id="credits">Click for Credits</button>
         <hr style="margin-bottom:10px;">
-        <div class="main">
+        <div class="main" id="main">
             <h2 style="margin-top:0">Shells</h2>
-            <span>Click a shell to change its state.</span> <button class="textbutton" id="resetshells"><u>Click here to Reset Shells</u></button><br>
+            <span>Click a shell to change its state.</span><br>
             <button class="shell" id="shell0"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
             <button class="shell" id="shell1"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
             <button class="shell" id="shell2"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
@@ -130,6 +175,10 @@
             <button class="shell" id="shell6"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
             <button class="shell" id="shell7"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
 
+                <br>
+            <button id="fire_live" class="fire live">Fire as Live Round</button>
+            <button id="resetshells" class="fire reset">Reset Shells</button>
+            <button id="fire_blank" class="fire blank">Fire as Blank Round</button>
             <h2>Probability</h2>
             <div id="probability">
                 Live/Blank Ratio: 0/0<br>
