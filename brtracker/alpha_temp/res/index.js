@@ -17,23 +17,23 @@ function updateImages(queue) {
         for ([k, v] of Object.entries(states)) {
             document.getElementById(k).outerHTML =
                 states[k] === 0 ?
-                    `<img id="${k}" src="../assets/round_unknown.png" width="64" alt="Unknown Round">` :
+                    `<img id="${k}" src="assets/round_unknown.png" width="64" alt="Unknown Round">` :
                     states[k] === 1 ?
-                        `<img id="${k}" src="../assets/round_live.png" width="64" alt="Live Round">` :
+                        `<img id="${k}" src="assets/round_live.png" width="64" alt="Live Round">` :
                         states[k] === 2 ?
-                            `<img id="${k}" src="../assets/round_blank.png" width="64" alt="Blank Round">` :
-                            `<img id="${k}" src="../assets/round_shot.png" width="64" alt="Dead Round">`
+                            `<img id="${k}" src="assets/round_blank.png" width="64" alt="Blank Round">` :
+                            `<img id="${k}" src="assets/round_shot.png" width="64" alt="Dead Round">`
         }
     } else {
         for ([k, v] of Object.entries(qstates)) {
             document.getElementById(`q${k}`).outerHTML =
                 qstates[k] === 0 ?
-                    `<img id="q${k}" src="../assets/round_unknown.png" width="64" alt="Unknown Round">` :
+                    `<img id="q${k}" src="assets/round_unknown.png" width="64" alt="Unknown Round">` :
                     qstates[k] === 1 ?
-                        `<img id="q${k}" src="../assets/round_live.png" width="64" alt="Live Round">` :
+                        `<img id="q${k}" src="assets/round_live.png" width="64" alt="Live Round">` :
                         qstates[k] === 2 ?
-                            `<img id="q${k}" src="../assets/round_blank.png" width="64" alt="Blank Round">` :
-                            `<img id="q${k}" src="../assets/round_shot.png" width="64" alt="Dead Round">`
+                            `<img id="q${k}" src="assets/round_blank.png" width="64" alt="Blank Round">` :
+                            `<img id="q${k}" src="assets/round_shot.png" width="64" alt="Dead Round">`
         }
     }
 }
