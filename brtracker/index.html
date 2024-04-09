@@ -12,10 +12,11 @@
                 margin: 0;}
             h2 {font-family:"vcr";font-size:30px;}
             p { font-size: 19px;padding:0; }
+            span { font-size: 15px;}
             hr { border:3px solid black;border-radius:10px;width:50%;box-shadow:white 2px 2px 0px;}
             @font-face {font-family:"vcr";src:url("https://cocosbeans.me/brtracker/assets/vcr_osd_mono.ttf");}
             @font-face {font-family:"unispace";src:url("https://cocosbeans.me/brtracker/assets/unispace_bd.otf");}
-            .shell {border:0;background-color:transparent;cursor:pointer;}
+            .shell,.textbutton {border:0;background-color:transparent;cursor:pointer;}
         </style>
 
         <script defer>
@@ -27,7 +28,13 @@
                     shell6: 0, shell7: 0
                 }
 
-                function changeImg(shell) {
+                function _simplify(num, dem) {
+                    var gcd = function gcd(a, b) { return b ? gcd(b, a%b) : a }
+                    gcd = gcd(num, dem)
+                    return [num/gcd, dem/gcd]
+                }
+
+                function updateShell(shell) {
                     states[shell]++
                     if (states[shell] > 2) states[shell] = 0
                     document.getElementById(shell).innerHTML =
@@ -36,16 +43,51 @@
                             states[shell] === 1 ?
                                 '<img src="https://cocosbeans.me/brtracker/assets/br_roundlive.png" width="128" alt="Live Round">' :
                                 '<img src="https://cocosbeans.me/brtracker/assets/br_roundblank.png" width="128" alt="Blank Round">'
+
+                    var bl = 0
+                    var li = 0
+
+                    for ([k,v] of Object.entries(states)) {
+                        if (v === 1) li++
+                        else if (v === 2) bl++
+                    }
+
+                    var prob = _simplify(li, bl)
+
+                    document.getElementById('probability').innerHTML = `${prob[0]}/${prob[1]} - ${prob[1] === 0 ? prob[0] : prob[0] / prob[1]}% Survival`
                 }
 
-                document.getElementById("shell0").addEventListener("click",()=>{changeImg("shell0")})
-                document.getElementById("shell1").addEventListener("click",()=>{changeImg("shell1")})
-                document.getElementById("shell2").addEventListener("click",()=>{changeImg("shell2")})
-                document.getElementById("shell3").addEventListener("click",()=>{changeImg("shell3")})
-                document.getElementById("shell4").addEventListener("click",()=>{changeImg("shell4")})
-                document.getElementById("shell5").addEventListener("click",()=>{changeImg("shell5")})
-                document.getElementById("shell6").addEventListener("click",()=>{changeImg("shell6")})
-                document.getElementById("shell7").addEventListener("click",()=>{changeImg("shell7")})
+                function clearAll() {
+                    if (confirm('Do you really want to reset all the shells?')) {
+                        document.getElementById('probability').innerHTML = `0/0 - 0% Survival`
+                        states = {
+                            shell0: 0,
+                            shell1: 0,
+                            shell2: 0,
+                            shell3: 0,
+                            shell4: 0,
+                            shell5: 0,
+                            shell6: 0,
+                            shell7: 0
+                        }
+
+                        for (i = 0; i < 8; i++) {
+                            document.getElementById(`shell${i}`).innerHTML =
+                                '<img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128" alt="Unknown Round">'
+                        }
+                    }
+                }
+
+                document.getElementById("shell0").addEventListener("click",()=>{updateShell("shell0")})
+                document.getElementById("shell1").addEventListener("click",()=>{updateShell("shell1")})
+                document.getElementById("shell2").addEventListener("click",()=>{updateShell("shell2")})
+                document.getElementById("shell3").addEventListener("click",()=>{updateShell("shell3")})
+                document.getElementById("shell4").addEventListener("click",()=>{updateShell("shell4")})
+                document.getElementById("shell5").addEventListener("click",()=>{updateShell("shell5")})
+                document.getElementById("shell6").addEventListener("click",()=>{updateShell("shell6")})
+                document.getElementById("shell7").addEventListener("click",()=>{updateShell("shell7")})
+
+                document.getElementById("resetshells").addEventListener("click",()=>{clearAll()})
             }
         </script>
     </head>
@@ -54,16 +96,21 @@
             The Buckshot Roulette Tracker
         </h1>
         <p>Made for <a href="https://mikeklubnika.itch.io/buckshot-roulette">Buckshot Roulette</a> •
-            Created by <a href="https://cocosbeans.me">cocosbeans</a> (2024) • v0.0a</p>
+            Created by <a href="https://cocosbeans.me">cocosbeans</a> (2024) • v0.1a</p>
         <hr>
         <h2>Shells</h2>
+        <span>Click a shell to change its state.</span> <button class="textbutton" id="resetshells"><u>Click here to Reset Shells</u></button><br>
         <button class="shell" id="shell0"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
         <button class="shell" id="shell1"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
         <button class="shell" id="shell2"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
         <button class="shell" id="shell3"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
+            <br>
         <button class="shell" id="shell4"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
         <button class="shell" id="shell5"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
         <button class="shell" id="shell6"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
         <button class="shell" id="shell7"><img src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="128"></button>
+
+        <h2>Probability (WIP / BROKEN)</h2>
+        <p id="probability">0/0 - 0% Survival</p>
     </body>
 </html>
