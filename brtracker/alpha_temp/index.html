@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/x-icon" href="https://cocosbeans.me/brtracker/assets/shell.jpg">
+        <title>Buckshot Roulette Tracker</title>
 
+        <style>
+            * {font-family: "unispace";text-align:center;text-shadow: 2px 2px 0 black;color: white;}
+            body {background-image:url('https://cocosbeans.me/brtracker/assets/br_title_bg.png');background-size:cover;padding:5px;}
+            h1 {
+                font-size: 50px;
+                margin: 0;}
+            h2 {font-family:"vcr";font-size:30px;}
+            p { font-size: 19px;padding:0; }
+            span { font-size: 15px;}
+            hr { border:3px solid white;border-radius:10px;width:50%;/*box-shadow:white 2px 2px 0;*/}
+            @font-face {font-family:"vcr";src:url("https://cocosbeans.me/brtracker/assets/vcr_osd_mono.ttf");}
+            @font-face {font-family:"unispace";src:url("https://cocosbeans.me/brtracker/assets/unispace_bd.otf");}
+            .shell,.textbutton {border:0;background-color:transparent;cursor:pointer;}
+            .main {border:3px solid white;border-radius:7px;width:50%;margin:auto;background:rgb(196,136,136);
+                background:linear-gradient(27deg,rgba(196,136,136,1) 0%,rgba(255,199,199,1)62%,rgba(196,85,85,1)100%);
+                padding:15px;}
+            .fire { width: 200px;height:50px;border:3px solid white;border-radius:5px;cursor:pointer; }
+            .live { background-color:darkred; }
+            .blank { background-color:slategray; }
+            .reset { background-color:black; }
+            .chqueue { background-color:forestgreen; }
+        </style>
+
+        <script src="index.js" defer></script>
+    </head>
+    <body>
+        <h1>
+            The Buckshot Roulette Tracker
+        </h1>
+        <p>Made for <a href="https://mikeklubnika.itch.io/buckshot-roulette">Buckshot Roulette</a> •
+            Created by <a href="https://cocosbeans.me">cocosbeans</a> (2024) • v0.3a</p>
+        <button class="textbutton" id="credits">Click for Credits</button>
+
+        <hr style="margin-bottom:10px;">
+
+        <div class="main" id="main">
+            <h2 style="margin-top:0">Shells</h2>
+
+            <button id="add_live" class="fire chqueue">Add Live Round</button>
+
+                <br>
+            <img id="shell0" src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="64">
+            <img id="shell1" src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="64">
+            <img id="shell2" src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="64">
+            <img id="shell3" src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="64">
+            <img id="shell4" src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="64">
+            <img id="shell5" src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="64">
+            <img id="shell6" src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="64">
+            <img id="shell7" src="https://cocosbeans.me/brtracker/assets/br_roundunknown.png" width="64">
+                <br>
+            
+            <button id="fire_live" class="fire live">Fire as Live Round</button>
+            <button id="resetshells" class="fire reset">Reset Shells</button>
+            <button id="fire_blank" class="fire blank">Fire as Blank Round</button>
+            <h2>Probability</h2>
+            <div id="probability">
+                Live/Blank Ratio: 0/0<br>
+                Odds of a Live Round: 0%<br>
+                Odds of a Blank Round: 0%
+            </div>
+        </div>
+    </body>
+</html>
