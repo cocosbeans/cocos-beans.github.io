@@ -3,6 +3,15 @@ let output = document.getElementById('output')
 
 const version = '1.0.0a'
 
+// Commands
+
+const help =
+    new Command('help', 'List all commands')
+        .argumentv('string', 'cmd', 'Get verbose info on a specific command', true)
+        .process(() => {
+
+        })
+
 // Initialization
 
 window.onload = () => {
@@ -56,5 +65,45 @@ function interaction() {
         default:
             fmtOutput(`${color(`I don't know what '${a[0]}' means. Say 'help' for commands.`, 'C52E2E')}`)
             break
+    }
+}
+
+// Constructors
+
+class Command {
+    constructor(keyword, description) {
+        this.data = new Object()
+        this.data.keyword = keyword
+        this.data.description = description
+        this.data.args = new Array()
+    }
+
+    argument(flag, description, setsValue, isOptional, shorthand = "none") {
+        this.data.args.push({
+            type: 'novalue',
+            optional: isOptional,
+            data: {
+                flag: flag,
+                description: description,
+                short: shorthand,
+                value: setsValue
+            }
+        })
+    }
+
+    argumentv(type, uid, description, isOptional) {
+        this.data.args.push({
+            type: 'value',
+            optional: isOptional,
+            data: {
+                uid: uid,
+                description: description,
+                type: type
+            }
+        })
+    }
+
+    process(exec) {
+        this.data.execute = exec
     }
 }
