@@ -30,7 +30,7 @@ function updateImages(queue) {
                         states[k] === 2 ?
                             `<img id="${k}" src="assets/round_blank.png" width="64" alt="Blank Round">` :
                             `<img id="${k}" src="assets/round_shot.png" width="64" alt="Dead Round">`
-        
+        }
     } else {
         for ([k, v] of Object.entries(qstates)) {
             document.getElementById(`q${k}`).outerHTML =
