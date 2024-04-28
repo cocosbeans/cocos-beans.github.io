@@ -1,3 +1,10 @@
+const news = [
+    "APR 27, 2024 @ 11:01 PM CST (v1.1):<br>Hi! This is the first announcement. I added this announcement thingy so I can give updates on this project! It's been a while since I've touched this." +
+        "<br>Now for some news: I also set up a <a href='https://buymeacoffee.com/cocosbeans'>Buy Me A Coffee</a> for any donations! It'll remain at the top of the screen in case you want to support me." +
+        "<br>My next idea is to add items so you can have even better track of your shots. Comes in handy for DoN!<br><a href='https://buymeacoffee.com/cocosbeans/project-1-brt'><em>Also, I'm making another project...</em></a>"
+]
+
+
 let states = {
     shell0: 0, shell1: 0,
     shell2: 0, shell3: 0,
@@ -17,23 +24,23 @@ function updateImages(queue) {
         for ([k, v] of Object.entries(states)) {
             document.getElementById(k).outerHTML =
                 states[k] === 0 ?
-                    `<img id="${k}" src="assets/round_unknown.png" width="64" alt="Unknown Round">` :
+                    `<img id="${k}" src="../assets/round_unknown.png" width="64" alt="Unknown Round">` :
                     states[k] === 1 ?
-                        `<img id="${k}" src="assets/round_live.png" width="64" alt="Live Round">` :
+                        `<img id="${k}" src="../assets/round_live.png" width="64" alt="Live Round">` :
                         states[k] === 2 ?
-                            `<img id="${k}" src="assets/round_blank.png" width="64" alt="Blank Round">` :
-                            `<img id="${k}" src="assets/round_shot.png" width="64" alt="Dead Round">`
+                            `<img id="${k}" src="../assets/round_blank.png" width="64" alt="Blank Round">` :
+                            `<img id="${k}" src="../assets/round_shot.png" width="64" alt="Dead Round">`
         }
     } else {
         for ([k, v] of Object.entries(qstates)) {
             document.getElementById(`q${k}`).outerHTML =
                 qstates[k] === 0 ?
-                    `<img id="q${k}" src="assets/round_unknown.png" width="64" alt="Unknown Round">` :
+                    `<img id="q${k}" src="../assets/round_unknown.png" width="64" alt="Unknown Round">` :
                     qstates[k] === 1 ?
-                        `<img id="q${k}" src="assets/round_live.png" width="64" alt="Live Round">` :
+                        `<img id="q${k}" src="../assets/round_live.png" width="64" alt="Live Round">` :
                         qstates[k] === 2 ?
-                            `<img id="q${k}" src="assets/round_blank.png" width="64" alt="Blank Round">` :
-                            `<img id="q${k}" src="assets/round_shot.png" width="64" alt="Dead Round">`
+                            `<img id="q${k}" src="../assets/round_blank.png" width="64" alt="Blank Round">` :
+                            `<img id="q${k}" src="../assets/round_shot.png" width="64" alt="Dead Round">`
         }
     }
 }
@@ -49,10 +56,10 @@ function probability() {
 
     var total = live + blank
 
-    document.getElementById('probability').innerHTML =
-        `Live/Blank Ratio: ${live}/${blank}<br>
+    document.getElementById('probability').outerHTML =
+        `<p class="biggertext">Live/Blank Ratio: ${live}/${blank}<br>
         Odds of Live Round: ${live === 0 ? 0 : Math.round((live / total) * 100)}%<br>
-        Odds of Blank Round: ${blank === 0 ? 0 : Math.round((blank / total) * 100)}%`
+        Odds of Blank Round: ${blank === 0 ? 0 : Math.round((blank / total) * 100)}%</p>`
 }
 
 function addShell(isLive) {
@@ -153,3 +160,7 @@ document.getElementById('remove').addEventListener('click', () => {
     probability()
 })
  */
+
+document.getElementById('expandnews').addEventListener('click', () => {
+    document.getElementById('expandnews').outerHTML = `<p class="announcement">${news.join('<br><br>')}</p>`
+})

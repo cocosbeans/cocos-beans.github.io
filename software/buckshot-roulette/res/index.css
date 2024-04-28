@@ -65,6 +65,11 @@ hr {
     font-size: 25px;
 }
 
+.announcement {
+    font-size: 15px;
+    padding: 0 200px;
+}
+
 .fire,
 .change {
     width: 200px;
