@@ -12,7 +12,7 @@
             }
             @font-face {
                 font-family: 'Source Code Pro';
-                src: url('/SourceCodePro.ttf');
+                src: url('./SourceCodePro.ttf');
             }
             .code {
                 font-family: 'Source Code Pro';
@@ -79,7 +79,7 @@
             for (let f in Files) {
                 let file = Files[f]
                 document.getElementById('pages').innerHTML +=
-                    `<button onclick="loadPage('/src/${file.Path}', '${file.Title}', '${transformDate(file.Path)}')">${file.Title}</button><br><span class="datetext">${transformDate(file.Path)}</span><hr>`
+                    `<button onclick="loadPage('./src/${file.Path}', '${file.Title}', '${transformDate(file.Path)}')">${file.Title}</button><br><span class="datetext">${transformDate(file.Path)}</span><hr>`
             }
         </script>
     </body>
